@@ -18,7 +18,7 @@ def main(args):
     )
 
     img_path_parent = Path(img_path).parent
-    create_dir_if_not_exists(img_path_parent+"/images")
+    create_dir_if_not_exists(img_path_parent.as_posix()+"/images")
     
     mlsd_net_seg.generate_mlsd_image(
         mlsd_save_path=f'{img_path_parent}/images/house_mlsd_{prompt.strip().replace(" ", "")}.jpeg',
